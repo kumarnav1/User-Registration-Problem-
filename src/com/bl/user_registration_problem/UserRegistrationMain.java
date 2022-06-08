@@ -10,8 +10,13 @@ public class UserRegistrationMain {
 
         UserRegistration registration = new UserRegistration();
         Scanner scanner = new Scanner(System.in);
+
         System.out.print("Enter First-Name: ");
         String firstName = scanner.next();
         registration.validateFirstName(firstName);
+
+        System.out.println("Enter Last-Name: ");
+        String lastName = scanner.next();
+        registration.validateLastName(lastName);
     }
 }
