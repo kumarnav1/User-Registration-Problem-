@@ -18,5 +18,10 @@ public class UserRegistrationMain {
         System.out.println("Enter Last-Name: ");
         String lastName = scanner.next();
         registration.validateLastName(lastName);
+
+        System.out.println("Enter Email: ");
+        scanner.nextLine();
+        String email = scanner.nextLine();
+        registration.validateEmail(email);
     }
 }
