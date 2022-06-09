@@ -23,5 +23,10 @@ public class UserRegistrationMain {
         scanner.nextLine();
         String email = scanner.nextLine();
         registration.validateEmail(email);
+
+        System.out.println("Enter Phone number: ");
+        String phoneNumber = scanner.nextLine();
+        registration.validatePhoneNumber(phoneNumber);
+
     }
 }
