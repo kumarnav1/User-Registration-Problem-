@@ -8,6 +8,7 @@ public class UserRegistration {
     private static final String LAST_NAME = "^[A-Z][a-z]{2,}$";
     private static final String EMAIL = "[a-zA-Z0-9][a-zA-Z-0-9_+]*([.][a-zA-Z0-9]+)?[@][a-zA-Z-0-9]+[.][a-z]{2,4}([.][a-zA-Z]{2,4})?";
     private static final String PHONE_NUMBER = "[0-9]{2}\\s[0-9]{10}";
+    private static final String PASSWORD = ".{8,}";
 
     static boolean isFirstNameValid;
     static boolean isLastNameValid;
@@ -48,9 +49,19 @@ public class UserRegistration {
 
         isLastNameValid = Pattern.matches(PHONE_NUMBER, phoneNumber);
         if (!isLastNameValid) {
-            System.out.println("Phone number is invalid. Please enter phone number in proper format.");
+            System.out.println("Phone number format is invalid. Please enter phone number in proper format.");
             return;
         }
         System.out.println("Phone number is in correct format.");
+    }
+
+    public void validatePassword(String password) {
+
+        isLastNameValid = Pattern.matches(PASSWORD, password);
+        if (!isLastNameValid) {
+            System.out.println("Password format is invalid. Please enter phone number in proper format.");
+            return;
+        }
+        System.out.println("Password format is in correct format.");
     }
 }

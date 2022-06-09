@@ -28,5 +28,8 @@ public class UserRegistrationMain {
         String phoneNumber = scanner.nextLine();
         registration.validatePhoneNumber(phoneNumber);
 
+        System.out.println("Enter password: ");
+        String password = scanner.nextLine();
+        registration.validatePassword(password);
     }
 }
