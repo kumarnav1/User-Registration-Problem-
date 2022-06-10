@@ -10,14 +10,12 @@ public class UserRegistration {
     private static final String PHONE_NUMBER = "[0-9]{2}\\s[0-9]{10}";
     private static final String PASSWORD = "(?=.*[A-Z])(?=.*[0-9])(?=.*[\\W_])[\\w\\W]{8,}";
 
-    static boolean isFirstNameValid;
-    static boolean isLastNameValid;
-    static boolean isMailValid;
+    static boolean isInputValid;
 
     public void validateFirstName(String firstName) {
 
-        isFirstNameValid = Pattern.matches(FIRST_NAME, firstName);
-        if (!isFirstNameValid) {
+        isInputValid = Pattern.matches(FIRST_NAME, firstName);
+        if (!isInputValid) {
 
             System.out.println("First Name is not valid. Please enter first name in proper format.");
             return;
@@ -27,8 +25,8 @@ public class UserRegistration {
 
     public void validateLastName(String lastName) {
 
-        isLastNameValid = Pattern.matches(LAST_NAME, lastName);
-        if (!isLastNameValid) {
+        isInputValid = Pattern.matches(LAST_NAME, lastName);
+        if (!isInputValid) {
             System.out.println("Last Name is invalid. Please enter last name in proper format.");
             return;
         }
@@ -37,8 +35,8 @@ public class UserRegistration {
 
     public void validateEmail(String mail) {
 
-        isMailValid = Pattern.matches(EMAIL, mail);
-        if (!isMailValid) {
+        isInputValid = Pattern.matches(EMAIL, mail);
+        if (!isInputValid) {
             System.out.println(mail + "     E-mail is invalid. Please enter e-mail in proper format.");
             return;
         }
@@ -47,8 +45,8 @@ public class UserRegistration {
 
     public void validatePhoneNumber(String phoneNumber) {
 
-        isLastNameValid = Pattern.matches(PHONE_NUMBER, phoneNumber);
-        if (!isLastNameValid) {
+        isInputValid = Pattern.matches(PHONE_NUMBER, phoneNumber);
+        if (!isInputValid) {
             System.out.println("Phone number format is invalid. Please enter phone number in proper format.");
             return;
         }
@@ -57,8 +55,8 @@ public class UserRegistration {
 
     public void validatePassword(String password) {
 
-        isLastNameValid = Pattern.matches(PASSWORD, password);
-        if (!isLastNameValid) {
+        isInputValid = Pattern.matches(PASSWORD, password);
+        if (!isInputValid) {
             System.out.println("Password format is invalid. Please enter phone number in proper format.");
             return;
         }
