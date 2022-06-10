@@ -8,7 +8,7 @@ public class UserRegistration {
     private static final String LAST_NAME = "^[A-Z][a-z]{2,}$";
     private static final String EMAIL = "[a-zA-Z0-9][a-zA-Z-0-9_+]*([.][a-zA-Z0-9]+)?[@][a-zA-Z-0-9]+[.][a-z]{2,4}([.][a-zA-Z]{2,4})?";
     private static final String PHONE_NUMBER = "[0-9]{2}\\s[0-9]{10}";
-    private static final String PASSWORD = "(?=.*[A-Z])(?=.*[0-9])[\\w\\W]{8,}";
+    private static final String PASSWORD = "(?=.*[A-Z])(?=.*[0-9])(?=.*[\\W_])[\\w\\W]{8,}";
 
     static boolean isFirstNameValid;
     static boolean isLastNameValid;
