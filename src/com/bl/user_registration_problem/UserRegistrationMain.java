@@ -11,6 +11,10 @@ public class UserRegistrationMain {
             "abc()*@gmail.com", "abc@%*.com", "abc..2002@gmail.com", "abc.@gmail.com",
             "abc@abc@gmail.com", "abc@gmail.com.1a", "abc@gmail.com.aa.au"};
 
+    static final String[] PASSWORD_CHECK = {"dfdfdfd343434#3", "dfAdfjkdf&djfhAfdD", "dAdf34dDfh23",
+            "Adfj3343&dfdfdfafd()*7", "dkfjAdf3434#$#$34", "Afjdj3432kjfd)*", "AjdJgdf*jdfk987",
+            "dfDfjd34#54223ffdsds", "#kldfjAdfj0989", "adfjAdfh89687#", "Afj768*", "Afj768*o"};
+
     public static void main(String[] args) {
 
         System.out.println("Welcome to User Registration Problem");
@@ -39,6 +43,13 @@ public class UserRegistrationMain {
         String password = scanner.nextLine();
         registration.validatePassword(password);
 
+        System.out.println("\n\n  !............ More Password validations .............!\n");
+        for (String passwords : PASSWORD_CHECK) {
+
+
+            registration.validatePassword(passwords);
+        }
+        System.out.println("\n !............ More Email validations .............!");
         for (String emails : ALL_MAIL_ID) {
 
             registration.validateEmail(emails);
