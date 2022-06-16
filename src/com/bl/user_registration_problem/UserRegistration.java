@@ -12,54 +12,59 @@ public class UserRegistration {
 
     static boolean isInputValid;
 
-    public void validateFirstName(String firstName) {
+    public boolean validateFirstName(String firstName) {
 
         isInputValid = Pattern.matches(FIRST_NAME, firstName);
         if (!isInputValid) {
 
             System.out.println("First Name is not valid. Please enter first name in proper format.");
-            return;
+            return false;
         }
         System.out.println("First Name is in correct format.");
+        return true;
     }
 
-    public void validateLastName(String lastName) {
+    public boolean validateLastName(String lastName) {
 
         isInputValid = Pattern.matches(LAST_NAME, lastName);
         if (!isInputValid) {
             System.out.println("Last Name is invalid. Please enter last name in proper format.");
-            return;
+            return false;
         }
         System.out.println("Last Name is in correct format.");
+        return true;
     }
 
-    public void validateEmail(String mail) {
+    public boolean validateEmail(String mail) {
 
         isInputValid = Pattern.matches(EMAIL, mail);
         if (!isInputValid) {
             System.out.println(mail + "     E-mail is invalid. Please enter e-mail in proper format.");
-            return;
+            return false;
         }
         System.out.println(mail + "      Email is in correct format.");
+        return true;
     }
 
-    public void validatePhoneNumber(String phoneNumber) {
+    public boolean validatePhoneNumber(String phoneNumber) {
 
         isInputValid = Pattern.matches(PHONE_NUMBER, phoneNumber);
         if (!isInputValid) {
             System.out.println("Phone number format is invalid. Please enter phone number in proper format.");
-            return;
+            return false;
         }
         System.out.println("Phone number is in correct format.");
+        return true;
     }
 
-    public void validatePassword(String password) {
+    public boolean validatePassword(String password) {
 
         isInputValid = Pattern.matches(PASSWORD, password);
         if (!isInputValid) {
-            System.out.println( password +  "       Password format is invalid. Please enter password in proper format.");
-            return;
+            System.out.println(password + "       Password format is invalid. Please enter password in proper format.");
+            return false;
         }
         System.out.println(password + "       Password is in correct format.");
+        return true;
     }
 }
