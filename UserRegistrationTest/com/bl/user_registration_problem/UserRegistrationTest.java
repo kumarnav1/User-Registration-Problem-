@@ -8,30 +8,30 @@ public class UserRegistrationTest {
     UserRegistration registration = new UserRegistration();
 
     @Test
-    public void validateFirstNameHappy() {
+    public void validateFirstNameHappy() throws InvalidInputException {
 
         Assert.assertTrue(registration.validateFirstName("Navneet"));
     }
 
-    @Test
-    public void validateFirstNameSad() {
+    @Test(expected = InvalidInputException.class)
+    public void validateFirstNameSad() throws InvalidInputException {
 
         Assert.assertFalse(registration.validateFirstName("navneet"));
     }
 
     @Test
-    public void validateLastNameHappy() {
+    public void validateLastNameHappy() throws InvalidInputException {
 
         Assert.assertTrue(registration.validateLastName("Kumar"));
     }
 
-    @Test
-    public void validateLastNameSad() {
+    @Test(expected = InvalidInputException.class)
+    public void validateLastNameSad() throws InvalidInputException {
         Assert.assertFalse(registration.validateLastName("kumar"));
     }
 
     @Test
-    public void validateEmailHappy() {
+    public void validateEmailHappy()  {
         Assert.assertTrue(registration.validateEmail("navkr007@gmail.com"));
     }
 
@@ -41,22 +41,22 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void validatePhoneNumberHappy() {
+    public void validatePhoneNumberHappy() throws InvalidInputException {
         Assert.assertTrue(registration.validatePhoneNumber("91 9304093785"));
     }
 
-    @Test
-    public void validatePhoneNumberSad() {
+    @Test(expected = InvalidInputException.class)
+    public void validatePhoneNumberSad() throws InvalidInputException {
         Assert.assertFalse(registration.validatePhoneNumber("87 457845"));
     }
 
     @Test
-    public void validatePasswordHappy() {
+    public void validatePasswordHappy() throws InvalidInputException {
         Assert.assertTrue(registration.validatePassword("ajdkf$Jdfds9798"));
     }
 
-    @Test
-    public void validatePasswordSad() {
+    @Test(expected = InvalidInputException.class)
+    public void validatePasswordSad() throws InvalidInputException {
         Assert.assertFalse(registration.validatePassword("dkfjd434343#$343"));
     }
 }

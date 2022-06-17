@@ -12,24 +12,24 @@ public class UserRegistration {
 
     static boolean isInputValid;
 
-    public boolean validateFirstName(String firstName) {
+    public boolean validateFirstName(String firstName) throws InvalidInputException {
 
         isInputValid = Pattern.matches(FIRST_NAME, firstName);
         if (!isInputValid) {
 
             System.out.println("First Name is not valid. Please enter first name in proper format.");
-            return false;
+            throw new InvalidInputException("Invalid Input");
         }
         System.out.println("First Name is in correct format.");
         return true;
     }
 
-    public boolean validateLastName(String lastName) {
+    public boolean validateLastName(String lastName) throws InvalidInputException {
 
         isInputValid = Pattern.matches(LAST_NAME, lastName);
         if (!isInputValid) {
             System.out.println("Last Name is invalid. Please enter last name in proper format.");
-            return false;
+            throw new InvalidInputException("Invalid Input");
         }
         System.out.println("Last Name is in correct format.");
         return true;
@@ -46,23 +46,23 @@ public class UserRegistration {
         return true;
     }
 
-    public boolean validatePhoneNumber(String phoneNumber) {
+    public boolean validatePhoneNumber(String phoneNumber) throws InvalidInputException {
 
         isInputValid = Pattern.matches(PHONE_NUMBER, phoneNumber);
         if (!isInputValid) {
             System.out.println("Phone number format is invalid. Please enter phone number in proper format.");
-            return false;
+            throw new InvalidInputException("Invalid Input");
         }
         System.out.println("Phone number is in correct format.");
         return true;
     }
 
-    public boolean validatePassword(String password) {
+    public boolean validatePassword(String password) throws InvalidInputException {
 
         isInputValid = Pattern.matches(PASSWORD, password);
         if (!isInputValid) {
             System.out.println(password + "       Password format is invalid. Please enter password in proper format.");
-            return false;
+            throw new InvalidInputException("Invalid Input");
         }
         System.out.println(password + "       Password is in correct format.");
         return true;
