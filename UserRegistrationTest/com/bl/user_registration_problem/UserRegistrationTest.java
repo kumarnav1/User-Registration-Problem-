@@ -9,19 +9,16 @@ public class UserRegistrationTest {
 
     @Test
     public void validateFirstNameHappy() throws InvalidInputException {
-
         Assert.assertTrue(registration.validateFirstName("Navneet"));
     }
 
     @Test(expected = InvalidInputException.class)
     public void validateFirstNameSad() throws InvalidInputException {
-
         Assert.assertFalse(registration.validateFirstName("navneet"));
     }
 
     @Test
     public void validateLastNameHappy() throws InvalidInputException {
-
         Assert.assertTrue(registration.validateLastName("Kumar"));
     }
 
@@ -31,12 +28,12 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void validateEmailHappy()  {
+    public void validateEmailHappy() throws InvalidInputException {
         Assert.assertTrue(registration.validateEmail("navkr007@gmail.com"));
     }
 
     @Test
-    public void validateEmailSad() {
+    public void validateEmailSad() throws InvalidInputException {
         Assert.assertFalse(registration.validateEmail("navkr007@@@gmail.com"));
     }
 
